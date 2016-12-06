@@ -250,6 +250,16 @@ public class TestCases {
         objLogin.loginToGurukula("admin", "admin");
         objHomePage = new HomePage(driver);
         Assert.assertTrue(objHomePage.getHomePageDashboardUserName().contains("You are logged in as user"));
+	
+	objHomePage.clickEntitiesMenu();
+        Thread.sleep(4000);
+        objHomePage.clickbranch();
+        objBranchPage = new BranchesPage(driver);
+        Thread.sleep(4000);
+        Assert.assertTrue(objBranchPage.getBranchesPagetitle().contains("Branches"));
+        objBranchPage.createBranch();
+        Thread.sleep(4000);
+	    
         objHomePage.clickEntitiesMenu();
         Thread.sleep(4000);
         objHomePage.clickstaff();
